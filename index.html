@@ -1,1 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visor 360 Spin Table</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f4f4f9;
+      font-family: Arial, sans-serif;
+    }
+    .contenedor-360 {
+      width: 100%;
+      max-width: 800px;
+      padding: 20px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+    .cloudimage-360 {
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      background: #ffffff;
+    }
+  </style>
+</head>
+<body>
 
+  <div class="contenedor-360">
+    <!-- ATENCIÓN: Si cambiaste la cantidad de fotos, ajusta data-amount-x -->
+    <div
+      class="cloudimage-360"
+      data-folder="fotos/"
+      data-filename-x="foto_{index}.jpg"
+      data-amount-x="72"
+      data-autoplay
+      data-speed="150"
+      data-drag-speed="100"
+      data-pointer
+    ></div>
+    <p><i>Haz clic y arrastra para girar el objeto</i></p>
+  </div>
+
+  <!-- Librería del visor -->
+  <script src="https://scaleflex.cloudimg.io/v7/plugins/js-cloudimage-360-view/latest/js-cloudimage-360-view.min.js"></script>
+  <script>
+    window.CI360.init();
+  </script>
+</body>
+</html>
